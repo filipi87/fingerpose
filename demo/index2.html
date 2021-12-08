@@ -65,7 +65,7 @@
       ];
       const GE = new fp.RealTimeGestureEstimator(knownGestures);
       GE.on('gesture', (gesture) => {
-        console.log('gesture => ', gesture)
+        resultLayer.innerText = gestureStrings[gesture];
       });
       await GE.initialize(video);
       GE.startEstimate(config.video.fps)

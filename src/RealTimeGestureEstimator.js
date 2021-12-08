@@ -30,6 +30,7 @@ export default class RealTimeGestureEstimator extends Events{
           return (p.score > c.score) ? p : c;
         });
         const gesture = result.name;
+        //TODO we could include business logic to just emit events when the gesture changes
         this.emit('gesture', gesture);
       }
     }
