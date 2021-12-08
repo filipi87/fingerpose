@@ -9,7 +9,7 @@ const thumbsUpDescription = new GestureDescription('thumbs_up');
 // - curl: none (must)
 // - direction vertical up (best)
 // - direction diagonal up left / right (acceptable)
-thumbsUpDescription.addCurl(Finger.Thumb, FingerCurl.NoCurl, 1.0);
+thumbsUpDescription.addCurl(Finger.Thumb, FingerCurl.NoCurl);
 thumbsUpDescription.addDirection(Finger.Thumb, FingerDirection.VerticalUp, 1.0);
 thumbsUpDescription.addDirection(Finger.Thumb, FingerDirection.DiagonalUpLeft, 0.9);
 thumbsUpDescription.addDirection(Finger.Thumb, FingerDirection.DiagonalUpRight, 0.9);
