@@ -9,10 +9,12 @@ const thumbsDownDescription = new GestureDescription('thumbs_down');
 // - curl: none (must)
 // - direction vertical up (best)
 // - direction diagonal up left / right (acceptable)
-thumbsDownDescription.addCurl(Finger.Thumb, FingerCurl.NoCurl);
+thumbsDownDescription.addCurl(Finger.Thumb, FingerCurl.NoCurl, 1.0);
 thumbsDownDescription.addDirection(Finger.Thumb, FingerDirection.VerticalDown, 1.0);
 thumbsDownDescription.addDirection(Finger.Thumb, FingerDirection.DiagonalDownLeft, 1.0);
 thumbsDownDescription.addDirection(Finger.Thumb, FingerDirection.DiagonalDownRight, 1.0);
+thumbsDownDescription.addDirection(Finger.Thumb, FingerDirection.HorizontalLeft, 0.9);
+thumbsDownDescription.addDirection(Finger.Thumb, FingerDirection.HorizontalRight, 0.9);
 
 // all other fingers:
 // - curled (best)
