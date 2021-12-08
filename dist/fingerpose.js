@@ -144,6 +144,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/gestures/RaisedBackHand.js":
+/*!****************************************!*\
+  !*** ./src/gestures/RaisedBackHand.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _FingerDescription__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FingerDescription */ \"./src/FingerDescription.js\");\n/* harmony import */ var _GestureDescription__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../GestureDescription */ \"./src/GestureDescription.js\");\nfunction _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== \"undefined\" && o[Symbol.iterator] || o[\"@@iterator\"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === \"number\") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError(\"Invalid attempt to iterate non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\"); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it[\"return\"] != null) it[\"return\"](); } finally { if (didErr) throw err; } } }; }\n\nfunction _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === \"string\") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === \"Object\" && o.constructor) n = o.constructor.name; if (n === \"Map\" || n === \"Set\") return Array.from(o); if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }\n\nfunction _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }\n\n\n // describe thumbs up gesture 👍\n\nvar raisedBackHandDescription = new _GestureDescription__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('raised_back_hand'); // all fingers\n\nvar _iterator = _createForOfIteratorHelper(_FingerDescription__WEBPACK_IMPORTED_MODULE_0__[\"Finger\"].all),\n    _step;\n\ntry {\n  for (_iterator.s(); !(_step = _iterator.n()).done;) {\n    var finger = _step.value;\n    raisedBackHandDescription.addCurl(finger, _FingerDescription__WEBPACK_IMPORTED_MODULE_0__[\"FingerCurl\"].NoCurl, 1.0);\n  }\n} catch (err) {\n  _iterator.e(err);\n} finally {\n  _iterator.f();\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (raisedBackHandDescription);\n\n//# sourceURL=webpack://fp/./src/gestures/RaisedBackHand.js?");
+
+/***/ }),
+
 /***/ "./src/gestures/ThumbsDown.js":
 /*!************************************!*\
   !*** ./src/gestures/ThumbsDown.js ***!
@@ -184,11 +196,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Fin
 /*!*******************************!*\
   !*** ./src/gestures/index.js ***!
   \*******************************/
-/*! exports provided: VictoryGesture, ThumbsUpGesture, ThumbsDownGesture */
+/*! exports provided: VictoryGesture, ThumbsUpGesture, ThumbsDownGesture, RaisedBackHandGesture */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Victory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Victory */ \"./src/gestures/Victory.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"VictoryGesture\", function() { return _Victory__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _ThumbsUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThumbsUp */ \"./src/gestures/ThumbsUp.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ThumbsUpGesture\", function() { return _ThumbsUp__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/* harmony import */ var _ThumbsDown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThumbsDown */ \"./src/gestures/ThumbsDown.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ThumbsDownGesture\", function() { return _ThumbsDown__WEBPACK_IMPORTED_MODULE_2__[\"default\"]; });\n\n\n\n\n\n\n//# sourceURL=webpack://fp/./src/gestures/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Victory__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Victory */ \"./src/gestures/Victory.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"VictoryGesture\", function() { return _Victory__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _ThumbsUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ThumbsUp */ \"./src/gestures/ThumbsUp.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ThumbsUpGesture\", function() { return _ThumbsUp__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n/* harmony import */ var _ThumbsDown__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ThumbsDown */ \"./src/gestures/ThumbsDown.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"ThumbsDownGesture\", function() { return _ThumbsDown__WEBPACK_IMPORTED_MODULE_2__[\"default\"]; });\n\n/* harmony import */ var _RaisedBackHand__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RaisedBackHand */ \"./src/gestures/RaisedBackHand.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"RaisedBackHandGesture\", function() { return _RaisedBackHand__WEBPACK_IMPORTED_MODULE_3__[\"default\"]; });\n\n\n\n\n\n\n\n//# sourceURL=webpack://fp/./src/gestures/index.js?");
 
 /***/ }),
 

@@ -161,7 +161,8 @@
     const gestureStrings = {
       'thumbs_up': '👍',
       'thumbs_down': '👎',
-      'victory': '✌🏻'
+      'victory': '✌🏻',
+      'raised_back_hand':'🤚',
     };
 
     async function main() {
@@ -176,7 +177,8 @@
       const knownGestures = [
         fp.Gestures.VictoryGesture,
         fp.Gestures.ThumbsUpGesture,
-        fp.Gestures.ThumbsDownGesture
+        fp.Gestures.ThumbsDownGesture,
+        fp.Gestures.RaisedBackHandGesture,
       ];
       const GE = new fp.GestureEstimator(knownGestures);
 
