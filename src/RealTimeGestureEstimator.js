@@ -11,23 +11,10 @@ export default class RealTimeGestureEstimator extends Events{
     this.gestureEstimator = new GestureEstimator(knownGestures, estimatorOptions);
   }
 
-  async initialize( { mediaStream, videoWidth, videoHeight }) {
+  async initialize(videoElement) {
     this.handposeModel = await handpose.load();
-    console.log("Handpose model loaded");
-
-    this.videoElement = document.createElement('video')
-    this.videoElement.width = videoWidth;
-    this.videoElement.height = videoHeight;
-    this.videoElement.srcObject = mediaStream;
-    this.videoElement.onloadedmetadata = () => {
-      this.videoElement.play();
-    };
-
-    return new Promise(resolve => {
-      this.videoElement.addEventListener("loadeddata", event => {
-        resolve();
-      });
-    });
+    this.videoElement = videoElement
+    console.log("Handpose model loaded", this.videoElement);
   }
 
   async _estimateHands(){
@@ -36,7 +23,7 @@ export default class RealTimeGestureEstimator extends Events{
       // estimate gestures based on landmarks
       // using a minimum score of 9 (out of 10)
       // gesture candidates with lower score will not be returned
-      const est = this.estimate(predictions[i].landmarks, 9);
+      const est = this.gestureEstimator.estimate(predictions[i].landmarks, 9);
       if(est.gestures.length > 0) {
         // find gesture with highest match score
         let result = est.gestures.reduce((p, c) => {
@@ -49,7 +36,8 @@ export default class RealTimeGestureEstimator extends Events{
   }
 
   startEstimate(fps){
-    this.estimateInterval = setInterval(() => { this._estimateHands(); }, 1000 / fps);
+    console.log('startEstimate')
+    this.estimateInterval = setInterval(this._estimateHands.bind(this), 1000 / fps);
   }
 
   stopEstimate(){

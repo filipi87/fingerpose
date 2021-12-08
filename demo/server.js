@@ -9,7 +9,7 @@ const start = async () => {
   const config = loadConfig()
   const app = express()
   app.use('/', express.static('./demo', {
-      index: 'index.html'
+      index: 'index2.html'
   }))
   app.use('/dist', express.static('./dist'))
   app.listen(config.port, () => {

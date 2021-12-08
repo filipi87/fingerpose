@@ -29,26 +29,31 @@
       'raised_fist_hand': '✊'
     };
 
-    async function initCamera(width, height, fps) {
+    async function initCamera() {
       const constraints = {
         audio: false,
         video: {
           facingMode: "user",
-          width: width,
-          height: height,
-          frameRate: { max: fps }
+          width: config.video.width,
+          height: config.video.height,
+          frameRate: { max: config.video.fps }
         }
       };
       const video = document.querySelector("#pose-video");
-      video.width = width;
-      video.height = height;
+      video.width = config.video.width;
+      video.height = config.video.height;
       // get video stream
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       video.srcObject = stream;
-      return video
+      video.play();
+      return new Promise(resolve => {
+        video.addEventListener("loadeddata", event => {
+          resolve(video)
+        });
+      });
     }
 
-    async function main() {
+    async function main(video) {
       const resultLayer = document.querySelector("#pose-result");
       // configure gesture estimator
       const knownGestures = [
@@ -60,15 +65,16 @@
       ];
       const GE = new fp.RealTimeGestureEstimator(knownGestures);
       GE.on('gesture', (gesture) => {
-        console.log('gesture', gesture)
+        console.log('gesture => ', gesture)
       });
-      await GE.initialize();
+      await GE.initialize(video);
+      GE.startEstimate(config.video.fps)
     }
 
     window.addEventListener("DOMContentLoaded", async () => {
-      const video = await initCamera( config.video.width, config.video.height, config.video.fps )
+      const video = await initCamera()
       video.play();
-      main();
+      main(video);
     });
   </script>
 
