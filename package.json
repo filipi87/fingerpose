@@ -28,7 +28,7 @@
   "homepage": "https://github.com/andypotato/fingerpose#readme",
   "devDependencies": {
     "@babel/core": "^7.8.4",
-    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.8.4",
     "babel-loader": "^8.0.6",
     "express": "^4.17.1",
@@ -39,6 +39,7 @@
     "@tensorflow-models/handpose": "^0.0.7",
     "@tensorflow/tfjs-backend-webgl": "^3.11.0",
     "@tensorflow/tfjs-converter": "^3.11.0",
-    "@tensorflow/tfjs-core": "^3.11.0"
+    "@tensorflow/tfjs-core": "^3.11.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }

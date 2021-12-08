@@ -1,9 +1,10 @@
 import GestureEstimator from "./GestureEstimator";
-
+import regeneratorRuntime from "regenerator-runtime";
+import * as Events from "events";
 const handpose = require('@tensorflow-models/handpose');
 require('@tensorflow/tfjs-backend-webgl');
 
-export default class RealTimeGestureEstimator extends Event{
+export default class RealTimeGestureEstimator extends Events{
 
   constructor(knownGestures, estimatorOptions = {}) {
     super();
