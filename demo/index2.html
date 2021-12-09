@@ -26,7 +26,8 @@
       'thumbs_down': '👎',
       'victory': '✌🏻',
       'raised_back_hand':'🤚',
-      'raised_fist_hand': '✊'
+      'raised_fist_hand': '✊',
+      'white_up_pointing': '👆'
     };
 
     async function initCamera() {
@@ -62,6 +63,7 @@
         fp.Gestures.ThumbsDownGesture,
         fp.Gestures.RaisedBackHandGesture,
         fp.Gestures.RaisedFistHandGesture,
+        fp.Gestures.WhiteUpPointing,
       ];
       const GE = new fp.RealTimeGestureEstimator(knownGestures);
       GE.on('gesture', (gesture) => {
