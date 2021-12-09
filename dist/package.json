@@ -1,0 +1,6 @@
+{
+  "name": "@daily/fingerpose-dist",
+  "version": "0.1.0",
+  "description": "Finger pose classifier for hand landmarks detected by TensorFlow.js handpose model",
+  "main": "dist/fingerpose.js"
+}
